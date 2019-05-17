@@ -70,20 +70,19 @@ C4.5算法
  
 CART分类树
  
-  CART是在给定输入随机变量X
-条件下输出随机变量Y
-的条件概率分布的学习方法。
-  CART算法由一下两步组成：
-    1）决策树生成：基于训练数据集生成决策树，生成的决策树要尽量大；
-    2）决策树剪枝：用验证数据集对已生成的树进行剪枝病选择最优子树，这时用损失函数最小作为剪枝的标准。
+  CART是在给定输入随机变量X  
+条件下输出随机变量Y的条件概率分布的学习方法。  
+  CART算法由一下两步组成：  
+    1）决策树生成：基于训练数据集生成决策树，生成的决策树要尽量大；  
+    2）决策树剪枝：用验证数据集对已生成的树进行剪枝病选择最优子树，这时用损失函数最小作为剪枝的标准。  
  
-应用场景
+应用场景  
  
-  银行贷款申请、房产开发商房子的选址。
+  银行贷款申请、房产开发商房子的选址。  
 3. 回归树原理
-  决策树的生成就是递归地构建二叉决策树的过程，对于回归树用平方误差最小化准则。
-4.决策树防止过拟合手段
-  剪枝是决策树学习算法对付过拟合的主要手段。决策树剪枝的基本策略有“预剪枝”和“后剪枝”。
+  决策树的生成就是递归地构建二叉决策树的过程，对于回归树用平方误差最小化准则。  
+4.决策树防止过拟合手段  
+  剪枝是决策树学习算法对付过拟合的主要手段。决策树剪枝的基本策略有“预剪枝”和“后剪枝”。  
   预剪枝是指在决策树生成过程中，对每个结点在划分前先进行估计，若当前结点的划分不能带来决策树泛化性能提升，则停止划分并将当前结点标记为叶节点。
   后剪枝是指先从训练集生成一颗完整的决策树，然后自底向上地对非结点进行考察，若讲该结点对应的子树替换成叶节点能带来决策树泛化性能的提升，则将该子树替换成叶节点。
 5. 模型评估
@@ -96,18 +95,18 @@ CART分类树
 6. sklearn参数详解,python绘制决策树
 class sklearn.tree.DecisionTreeClassifier(criterion=’gini’, splitter=’best’, max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=None, random_state=None, max_leaf_nodes=None, min_impurity_decrease=0.0, min_impurity_split=None, class_weight=None, presort=False)
   参数详解：
-  criterion=’gini’, string, optional (default=”gini”)，衡量分支好坏的标准
-  splitter=’best’, string, optional (default=”best”)，选择分支的策略
-  max_depth=None, int or None, optional (default=None)，树的最大深度
-  min_samples_split=2, int, float, optional (default=2)，分支时最小样本数
-  min_samples_leaf=1, int, float, optional (default=1)，叶子最少样本
-  min_weight_fraction_leaf=0.0, float, optional (default=0.)，叶子结点的最小权重
-  max_features=None, int, float, string or None, optional (default=None)，生成树时考虑的最多特征点数
-  random_state=None,  int, RandomState instance or None, optional (default=None)，打乱样本时所用的随机种子
-  max_leaf_nodes=None,  int or None, optional (default=None)，生成树时采用的最大叶子结点
-  min_impurity_decrease=0.0, float, optional (default=0.)，当产生分支时，增加的纯度
-  min_impurity_split=None,  float, (default=1e-7)，树停止生长的阈值
-  class_weight=None,  dict, list of dicts, “balanced” or None, default=None，分支权重预设定
-  presort=False，bool, optional (default=False)，提前对数据排序，加快树的生成
+  criterion=’gini’, string, optional (default=”gini”)，衡量分支好坏的标准  
+  splitter=’best’, string, optional (default=”best”)，选择分支的策略  
+  max_depth=None, int or None, optional (default=None)，树的最大深度  
+  min_samples_split=2, int, float, optional (default=2)，分支时最小样本数  
+  min_samples_leaf=1, int, float, optional (default=1)，叶子最少样本  
+  min_weight_fraction_leaf=0.0, float, optional (default=0.)，叶子结点的最小权重  
+  max_features=None, int, float, string or None, optional (default=None)，生成树时考虑的最多特征点数  
+  random_state=None,  int, RandomState instance or None, optional (default=None)，打乱样本时所用的随机种子  
+  max_leaf_nodes=None,  int or None, optional (default=None)，生成树时采用的最大叶子结点  
+  min_impurity_decrease=0.0, float, optional (default=0.)，当产生分支时，增加的纯度  
+  min_impurity_split=None,  float, (default=1e-7)，树停止生长的阈值  
+  class_weight=None,  dict, list of dicts, “balanced” or None, default=None，分支权重预设定  
+  presort=False，bool, optional (default=False)，提前对数据排序，加快树的生成  
 
 
