@@ -84,15 +84,15 @@ CART分类树
 4.决策树防止过拟合手段  
   剪枝是决策树学习算法对付过拟合的主要手段。决策树剪枝的基本策略有“预剪枝”和“后剪枝”。  
   预剪枝是指在决策树生成过程中，对每个结点在划分前先进行估计，若当前结点的划分不能带来决策树泛化性能提升，则停止划分并将当前结点标记为叶节点。
-  后剪枝是指先从训练集生成一颗完整的决策树，然后自底向上地对非结点进行考察，若讲该结点对应的子树替换成叶节点能带来决策树泛化性能的提升，则将该子树替换成叶节点。
+  后剪枝是指先从训练集生成一颗完整的决策树，然后自底向上地对非结点进行考察，若讲该结点对应的子树替换成叶节点能带来决策树泛化性能的提升，则将该子树替换成叶节点。  
 5. 模型评估
-“所有模型都是坏的，但有些模型是有用的”。建立模型之后，接下来就要去评估模型，以确定此模型是否“有用”。sklearn库的metrics模块提供各种评估方法，包括分类评估、回归评估、聚类评估和交叉验证等，本节主要介绍分类模型评估方法。
-  评估分类是判断预测值时否很好的与实际标记值相匹配。正确的鉴别出正样本（True Positives）或者负样本（True Negatives）都是True。同理，错误的判断正样本（False Positive，即一类错误）或者负样本（False Negative，即二类错误）。
+“所有模型都是坏的，但有些模型是有用的”。建立模型之后，接下来就要去评估模型，以确定此模型是否“有用”。sklearn库的metrics模块提供各种评估方法，包括分类评估、回归评估、聚类评估和交叉验证等，本节主要介绍分类模型评估方法。  
+  评估分类是判断预测值时否很好的与实际标记值相匹配。正确的鉴别出正样本（True Positives）或者负样本（True Negatives）都是True。同理，错误的判断正样本（False Positive，即一类错误）或者负样本（False Negative，即二类错误）。  
   注意：True和False是对于评价预测结果而言，也就是评价预测结果是正确的(True)还是错误的(False)。而Positive和Negative则是样本分类的标记。
 
 
 
-6. sklearn参数详解,python绘制决策树
+6. sklearn参数详解,python绘制决策树  
 class sklearn.tree.DecisionTreeClassifier(criterion=’gini’, splitter=’best’, max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=None, random_state=None, max_leaf_nodes=None, min_impurity_decrease=0.0, min_impurity_split=None, class_weight=None, presort=False)
   参数详解：
   criterion=’gini’, string, optional (default=”gini”)，衡量分支好坏的标准  
